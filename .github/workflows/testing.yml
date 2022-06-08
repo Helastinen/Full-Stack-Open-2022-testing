@@ -23,5 +23,5 @@ jobs:
           COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
         run: echo "$COMMIT_MESSAGES"
       - name: do not deploy to prod if "#skip" in commit message
-        if: ${{ contains(toJson(github.event.commits.*.message), '#skip') }}
+        if: ${{ !contains(toJson(github.event.commits.*.message), '#skip') }}
         run: echo "step was run, commit does NOT contain '#skip'"
