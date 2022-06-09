@@ -3,7 +3,7 @@ name: App healthcheck
 on:
   push:
     branches: 
-      - master
+      - main
 
 jobs:
   URL_healthcheck:
